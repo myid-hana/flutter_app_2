@@ -20,17 +20,22 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('first app')
+        title: Text('BBANTO'),
+        centerTitle: true,
+        backgroundColor: Colors.greenAccent,
+        elevation: 0.0,
       ),
-      body: Center(
-        child: Column(
-          children: [
-            Text('hello'),
-            Text('hello'),
-            Text('hello')
-          ],
-        ),
-        ),
+      body: Center( //가로축 정렬
+        child: Column( 
+            mainAxisAlignment: MainAxisAlignment.center, //세로축 정렬
+            children: [
+              Text('hello'),
+              Text('hello'),
+              Text('hello')
+            ],
+          ),
+      ),
+      
     );
   }
 }
