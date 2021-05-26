@@ -6,33 +6,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'first app',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.green
       ),
       home: MyHomePage(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  @override 
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  var _text = 'Hello';
-
-  @override 
+class MyHomePage extends StatelessWidget {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Hello World'),
+      appBar: AppBar(
+        title: Text('first app')
       ),
-      body: Text(
-        _text,
-        style: TextStyle(fontSize: 40),
-      ),
-      
+      body: Center(
+        child: Column(
+          children: [
+            Text('hello'),
+            Text('hello'),
+            Text('hello')
+          ],
+        ),
+        ),
     );
   }
 }
