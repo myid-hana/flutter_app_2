@@ -22,12 +22,11 @@ class MyHome extends StatelessWidget {
         title: Text('Toast message'),
       ),
       body: Center(
-        child: FlatButton(
+        child: TextButton(
           onPressed: () {
             flutterToast();
           },
           child: Text('Toast'),
-          color: Colors.blue,
         ),
       ),
     );
