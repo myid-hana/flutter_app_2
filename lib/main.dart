@@ -27,9 +27,9 @@ class MyHome extends StatelessWidget {
           child: Text('Go to Second Page'),
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (BuildContext context) {
-                  return SecondPage();
-                }));
+                context, MaterialPageRoute(builder: (_) => 
+                  SecondPage()));
+                  //context 는 플러터에서 자동으로 제공하는 것이기 때문에 _로 표현할 수 있음. 
           },
         ),
       ),
