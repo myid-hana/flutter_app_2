@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fluttertoast/fluttertoast.dart';
+import 'package:app/charactor.dart';
 
 void main() => runApp(HanaApp());
 
@@ -8,8 +8,13 @@ class HanaApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Hana App',
-      home: MyHome(),
-      theme: ThemeData(primarySwatch: Colors.red),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Grade(),
+        '/first': (context) => MyHome(),
+        '/second': (context) => SecondPage()
+      },
+      // theme: ThemeData(primarySwatch: Colors.red),
     );
   }
 }
@@ -26,10 +31,7 @@ class MyHome extends StatelessWidget {
         child: ElevatedButton(
           child: Text('Go to Second Page'),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (_) => 
-                  SecondPage()));
-                  //context 는 플러터에서 자동으로 제공하는 것이기 때문에 _로 표현할 수 있음. 
+            Navigator.pushNamed(context, '/second');
           },
         ),
       ),
