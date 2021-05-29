@@ -18,27 +18,41 @@ class MyHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //Scaffold 를 리턴하는 모든 위젯 하나하나가 모두 라우터이다.
       appBar: AppBar(
-        title: Text('Toast message'),
+        title: Text('First Page'),
       ),
       body: Center(
-        child: TextButton(
+        child: ElevatedButton(
+          child: Text('Go to Second Page'),
           onPressed: () {
-            flutterToast();
+            Navigator.push(
+                context, MaterialPageRoute(builder: (BuildContext context) {
+                  return SecondPage();
+                }));
           },
-          child: Text('Toast'),
         ),
       ),
     );
   }
 }
 
-void flutterToast() {
-  Fluttertoast.showToast(
-      msg: 'Flutter',
-      gravity: ToastGravity.BOTTOM,
-      backgroundColor: Colors.redAccent,
-      fontSize: 20.0,
-      textColor: Colors.white,
-      toastLength: Toast.LENGTH_SHORT);
+class SecondPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      //Scaffold 를 리턴하는 모든 위젯 하나하나가 모두 라우터이다.
+      appBar: AppBar(
+        title: Text('Second Page'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Go to First Page'),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
+    );
+  }
 }
