@@ -21,6 +21,12 @@ class MyHome extends StatelessWidget {
       appBar: AppBar(
         title: Text('Home'),
       ),
+      body: TextButton(
+        child: Text('hana'),
+        onPressed: () {
+          print('hana');
+        },
+      ),
     );
   }
 }
